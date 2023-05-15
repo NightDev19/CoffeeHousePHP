@@ -1,6 +1,14 @@
-1) Create a Database "form" in localhost/phpmyadmin
-2) Import "users.sql" from database "form" file given in database folder
-3) Make sure your xampp config in mail function if not so follow these steps so you can send the mail.
+# Tutorial
+
+## 1) Create a Database "form" in localhost/phpmyadmin
+
+---
+
+## 2) Import "users.sql" from database "form" file given in database folder
+
+---
+
+## 3) Make sure your xampp config in mail function if not so follow these steps so you can send the mail.
 	
 	Go to the (C:xampp\php) and open the PHP configuration setting file
  	then find the [mail function] by scrolling down or simply press ctrl+f
@@ -40,8 +48,9 @@
 	– In the $receiver variable put the receiver email address,
 	in the $subject variable put the email subject and do respectively.
 
+---
 
-Note:	If your mail isn’t sent after the correct changes and you got a warning or error.
+## Note:	If your mail isn’t sent after the correct changes and you got a warning or error.
 	Please configure your google account security as “Less secure apps”. To configure it:
 	– Go to your Google account then click on the Security tab and scroll down, there you
 	can see the Less secure app access panel, Simply turn on that. This panel only shows,
