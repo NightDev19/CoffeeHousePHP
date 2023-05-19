@@ -110,6 +110,10 @@ if (mysqli_num_rows($qry) > 0) {
       height: 100vh;
       overflow-y: scroll;
       text-align: center;
+      border-radius: 10px;
+      box-shadow: 6px 11px 20px 0px rgba(0, 0, 0, 0.69);
+      -webkit-box-shadow: 6px 11px 20px 0px rgba(0, 0, 0, 0.69);
+      -moz-box-shadow: 6px 11px 20px 0px rgba(0, 0, 0, 0.69);
       padding: 40px;
     }
 
@@ -269,6 +273,89 @@ if (mysqli_num_rows($qry) > 0) {
       font-size: 0.9em;
       text-align: right;
     }
+
+    .recommendations {
+      background: #ddd;
+      border-radius: 10px;
+      box-shadow: 6px 11px 20px 0px rgba(0, 0, 0, 0.69);
+      -webkit-box-shadow: 6px 11px 20px 0px rgba(0, 0, 0, 0.69);
+      -moz-box-shadow: 6px 11px 20px 0px rgba(0, 0, 0, 0.69);
+      padding: 10px;
+    }
+
+    img {
+      vertical-align: middle;
+      border-radius: 10px;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 90%;
+
+      padding-top: 10px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+
+    }
+
+    /* Caption text */
+    .text {
+      color: #25262e;
+      font-size: 15px;
+      padding-top: 10px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #006698;
+      font-size: 12px;
+      padding: 20px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+      .text {
+        font-size: 11px
+      }
+    }
   </style>
 
 </head>
@@ -277,7 +364,7 @@ if (mysqli_num_rows($qry) > 0) {
 
   <header id="header">
     <a href="index.php" class="Logo">
-      <h1>Logo</h1>
+      <h1>Coffee House</h1>
     </a>
     <nav>
       <ul class="navigation">
@@ -345,14 +432,51 @@ if (mysqli_num_rows($qry) > 0) {
       <div class="recommendations">
         <div class="Welcome">
           <h2>COFFEE SHOP <span>Recommendations</span></h2>
-          <div class="images-maps">
+        </div>
+        <div class="slideshow-container">
+          <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="https://scontent.fmnl4-4.fna.fbcdn.net/v/t39.30808-6/344363615_101926186234629_3932775074503382181_n.png?stp=dst-png_s960x960&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=e3f864&amp;_nc_eui2=AeFbCIT4PAAn-MzyAFoI3cTV9TYau_Z25PL1Nhq79nbk8o3nnMAO0SjVT9v9I9Hw3vcwDTt7W_-nps7NcVpcec2G&amp;_nc_ohc=64F2afR5NNsAX-kq_0Y&amp;_nc_oc=AQmz6uITVuilWv-hnKGJdtPqLnNMlr8WKokwvOb6EFkRLP8glsuZwoFQWTkyEMoswfh3TQ0nz4jZRvb_vi1OcR38&amp;_nc_ht=scontent.fmnl4-4.fna&amp;oh=00_AfAxE8bZAh34ktvJQ4zpHF44VBVvmL3VCOEhM1xpZjHrJQ&amp;oe=646C0BDB" usemap="#image1" style="width:500px; height:200px;">
+
+            <map name="image1">
+              <area target="" alt="Kafè Kultura" title="Kafè Kultura" href="https://www.facebook.com/kafekulturaph" coords="4,1,958,536" shape="rect">
+            </map>
+            <div class="text">Kafè Kultura</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="https://scontent.fmnl4-1.fna.fbcdn.net/v/t39.30808-6/305747469_459019919576112_4089849390305904288_n.jpg?_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=09cbfe&amp;_nc_eui2=AeHRMBDUyBmkqRoVKbCpvChoGOXx4shH1i0Y5fHiyEfWLX0fqKg2yFLloW6W6L5BHISIZIrABZRn4BDr63It8URV&amp;_nc_ohc=98geEW8NNAIAX91d_KQ&amp;_nc_ht=scontent.fmnl4-1.fna&amp;oh=00_AfDvLrT6nBXbihyqV_6dJ74Zu14naBfxxHfBo79hpsU_NA&amp;oe=646AEAB7" usemap="#image2" style="width:500px; height:200px;">
+            <div class="text">Cafe Amazon</div>
+
+            <map name="image2">
+              <area target="" alt="Cafe Amazon" title="Cafe Amazon" href="https://www.facebook.com/cafeamazontanauan/" coords="956,954,0,2" shape="rect">
+            </map>
 
           </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="https://scontent.fmnl4-3.fna.fbcdn.net/v/t39.30808-6/335061853_947523703042763_730731293466545739_n.jpg?_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=09cbfe&amp;_nc_eui2=AeENoJS0ARwZYNJuRQwcVCmd1bEtft4yK7jVsS1-3jIruBYY9Gz7r7xC0HSIttD0zPn7HafxIZ_Jl8T8kuZvo8lC&amp;_nc_ohc=yOwqUXY_wwYAX-2-s49&amp;_nc_ht=scontent.fmnl4-3.fna&amp;oh=00_AfAznoJ2ReZVN5E1SzIRTXHlpTCiDYEJbrfFFs2i0mDj0w&amp;oe=646B88A5" usemap="#image3" style="width:500px; height:200px;">
+
+            <map name="image3">
+              <area target="" alt="Kape Gueno" title="Kape Gueno" href="https://www.facebook.com/Kapegueno" coords="3,6,1078,1076" shape="rect">
+            </map>
+            <div class="text">Kape Gueno</div>
+          </div>
+
+        </div>
+        <br>
+
+        <div style="text-align:center">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
         </div>
       </div>
     </div>
   </section>
-  
+
   <footer>
     <div class="row primary">
       <div class="column about">
@@ -388,20 +512,21 @@ if (mysqli_num_rows($qry) > 0) {
       </div>
     </div>
     <div class="row copyright">
-        <div class="footer-menu">
+      <div class="footer-menu">
 
-          <a href="index.php">Home</a>
-          <a href="">F.A.Q</a>
-          <a href="">Cookies Policy</a>
-          <a href="">Terms Of Service</a>
-          <a href="">Support</a>
+        <a href="index.php">Home</a>
+        <a href="">F.A.Q</a>
+        <a href="">Cookies Policy</a>
+        <a href="">Terms Of Service</a>
+        <a href="">Support</a>
 
-        </div>
-        <p>Copyright &copy; 2022</p>
       </div>
+      <p>Copyright &copy; 2022</p>
+    </div>
   </footer>
-
+  <!-- Loading Modal -->
   <div id="loader">
+
     <div class="loader row-item">
       <span class="circle"></span>
       <span class="circle"></span>
@@ -420,6 +545,30 @@ if (mysqli_num_rows($qry) > 0) {
         }
         hidePreloader();
       });
+    </script>
+
+    <script>
+      let slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+      }
     </script>
 </body>
 
