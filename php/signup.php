@@ -1,6 +1,22 @@
 <?php 
-    session_start();
-    include_once  "db.php";
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require('C:\xampp\htdocs\PHP\Form\vendor\autoload.php');
+$mail = new PHPMailer(true);
+$mail->SMTPDebug = 1;                      //Enable verbose debug output
+$mail->isSMTP();                                            //Send using SMTP
+$mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+$mail->SMTPAuth   = true;
+$mail -> Username = 'sherwintajan143@gmail.com';
+$mail -> Password = 'password';
+$mail->SMTPSecure = 'ssl';  
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+$mail->Port       = 465; 
+session_start();
+include_once  "db.php";
 $fname = $_POST['fname'];
 $lname = $_POST['lname'];
 $email = $_POST['email'];
@@ -49,12 +65,18 @@ if(!empty($fname) && !empty($lname) && !empty($email) && !empty($phone) && !empt
                             //mail function
                             if($otp){
                                 $receiver = $email;
-                                $subject = "From: $fname $lname <$email>";
-                                $body = "Name "." $fname $lname  \n Email" . " $email \n Otp" . " $otp";
-                                $sender = "From: sherwintajan143@gmail.com" ; 
+                                $mail->setFrom('sherwintajan143@gmail.com', 'Mailer');
+                                $mail->isHTML(true); 
+                                $mail->Subject = "From: $fname $lname <$email>";
+                                $mail->Body    = "Name "." $fname $lname  \n Email:" . " $email \n Otp" . " $otp";
+                                $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+                                //$subject = "From: $fname $lname <$email>";
+                                //$body = "Name "." $fname $lname  \n Email" . " $email \n Otp" . " $otp";
+                                //$sender = "From: sherwintajan143@gmail.com" ; 
                                 
-                                if(mail($receiver, $subject, $body, $sender)){
-                                   echo "success";
+                                if(mail($mail -> addAddress($receiver), $mail -> Body, $mail -> Subject, $mail -> AltBody)){
+                                    $mail->send();
+                                    echo "success";
                                 }
                                 else{
                                     echo "Email Problem!" . mysqli_error($conn);

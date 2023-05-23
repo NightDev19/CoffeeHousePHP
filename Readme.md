@@ -1,4 +1,4 @@
-# Tutorial
+# Tutorial For Email Verification
 
 ## 1) Create a Database "form" in localhost/phpmyadmin
 
@@ -50,7 +50,7 @@
 
 ---
 
-## Note:	If your mail isn’t sent after the correct changes and you got a warning or error.
+## Note:	If your mail isn’t sent after the correct changes and you got a warning or error.(Cant be accessed now T_T)
 	Please configure your google account security as “Less secure apps”. To configure it:
 	– Go to your Google account then click on the Security tab and scroll down, there you
 	can see the Less secure app access panel, Simply turn on that. This panel only shows,
